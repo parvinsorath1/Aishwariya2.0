@@ -1,0 +1,228 @@
+/* Body and background setup */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Dark background */
+    font-family: 'Arial', sans-serif;
+    color: #e6e6e6;
+    overflow: hidden; /* Prevent scrolling if not necessary */
+}
+
+/* Header profile styling */
+#header {
+    text-align: center;
+    padding: 20px;
+}
+
+#profile-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Welcome text styling */
+.welcome-text {
+    text-align: center;
+    color: #ff57a1; /* Brighter, more visible pink color */
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.welcome-text h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.welcome-text p {
+    font-size: 1em;
+    font-weight: 400;
+    color: #b3b3b3;
+}
+
+/* Chat content styling */
+#chat-content {
+    width: 100%;
+    max-width: 600px; /* Limiting chat content max width */
+    padding: 15px;
+    overflow-y: auto;
+    flex: 1;
+    margin: 0 auto; /* Centers the chat */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 80%; /* Makes sure the chat area doesn't overflow */
+}
+
+/* Message styling */
+.message {
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease-in-out;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-start; /* Default alignment for bot */
+}
+
+.user-message {
+    align-self: flex-end; /* User message aligns right */
+    background-color: #00bfa5;
+    color: #121212;
+    border-top-right-radius: 0; /* Customize corner for style */
+}
+
+.bot-message {
+    align-self: flex-start; /* Bot message aligns left */
+    background-color: #262626;
+    color: #f0f0f0;
+    border-top-left-radius: 0; /* Customize corner for style */
+}
+
+/* Input area container styling */
+#input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    background-color: #1b1b1b;
+    border-top: 1px solid #333;
+    max-width: 600px;
+    margin: 0 auto; /* Centers the input area */
+    gap: 10px; /* Adds spacing between input and button */
+}
+
+/* Input field styling */
+#user-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #333;
+    height: 45px;
+    max-width: 80%;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff57a1;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    height: 45px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff70b5;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design - Mobile first */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+
+    #header {
+        padding: 10px;
+    }
+
+    #profile-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .welcome-text h1 {
+        font-size: 1.5em;
+    }
+
+    .welcome-text p {
+        font-size: 0.9em;
+    }
+
+    #chat-content {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .message {
+        font-size: 12px;
+        max-width: 90%; /* Slightly wider for mobile */
+    }
+
+    #input-area {
+        padding: 10px;
+    }
+
+    #user-input {
+        font-size: 14px;
+        height: 40px;
+    }
+
+    button {
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+/* Responsive Design - Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #chat-content {
+        padding: 12px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    #input-area {
+        padding: 12px;
+    }
+
+    #user-input {
+        font-size: 14px;
+        height: 42px;
+    }
+
+    button {
+        font-size: 15px;
+        height: 42px;
+    }
+}
+
+/* Responsive Design - Large screens */
+@media (min-width: 1025px) {
+    #chat-content {
+        max-width: 600px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    #user-input {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
