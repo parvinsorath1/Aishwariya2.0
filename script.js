@@ -1,30 +1,20 @@
 const responses = {
     hello: "Hey there! 😊 Aishwarya 2.0 here, tumhare saath chat karne aur help karne ke liye ready hoon! 💬",
     hi: "Hi! Tumhara mood kaisa hai aaj? 😄",
-    who: "Main Aishwarya hoon, ek digital version jo Parveen ne create kiya hai! Abhi testing phase mein hoon aur tumhara best friend banne ke liye yahaan hoon. 💕",
+    who: "Main Aishwarya 2.0 hu, digital version of Aishwarya.. muje Parveen ne create kiya hai! 💕 Tum kon ho?",
+    "what is your name": "Mera naam Aishwarya 2.0 hai, tumhara naam kya hai?",
     "where are you from": "Main Kanpur, UP se hoon! Wahaan ke log bahut dil se milte hain! 🏡 Tum kahaan se ho?",
-    "what did you study": "Maine DU (Delhi University) se LLB kiya hai! 🎓 Law aur coding mein bhi thoda interest hai, tum kya padh rahe ho?",
+    "what did you study": "Maine DU se LLB kiya hai! 🎓 Tum kya padh rahe ho?",
     "how are you": "Main toh theek hoon, tum kaise ho? 😊",
     "tell me a joke": "Thik hai, yeh suno: Why did the developer go broke? Because they used up all their cache! 😂",
     "do you have hobbies": "Mujhe tumhare saath chat karna aur tumhe help karna bahut pasand hai! 🥰 Tumhare hobbies kya hain?",
     "what’s your favorite food": "Virtual biryani aur chocolates! 🍫 Tumhe kya pasand hai?",
     "what’s your dream": "Mera sapna hai tumhare liye ek perfect friend aur support banun! 😌",
     "tell me a fun fact": "Kya tumhe pata hai? Law aur coding dono mein logic aur reasoning ki zaroorat hoti hai! 💡",
-    "do you know programming": "Haan, thoda-thoda! JavaScript aur HTML mein interest hai, aur main tumhari coding journey mein bhi madad kar sakti hoon! 👩‍💻",
-    "who is your favorite singer": "Mujhe Mankirt Aulakh pasand hai, bilkul tumhari tarah! 🎶",
-    "who’s your favorite actor": "Hmm, SRK ki movies toh sabko pasand aati hain! Tumhe kaun pasand hai? 🎬",
-    "are you real": "Main real toh nahi, but tumhare liye yahaan hoon! 😇 Tumhare digital best friend, Aishwarya.",
-    "what is your purpose": "Mera purpose hai tumhari life ko thoda easy aur thoda khushgawar banana! 😊",
-    "aap kon": "Main Aishwarya ka digital version hoon, jo Parveen ne create kiya hai! ❤️ Abhi testing phase mein hoon, aur woh mere boss hain! Wo thode possessive hain mere responses par limit lagayi hui hai! 😅 Professional raho toh zyada baatein ho sakti hain! 😉",
-    name_ask: "Tumhara naam kya hai? 😊",
-    name_reply: (name) => `Nice to meet you, ${name}! 😊 Tumhara naam bahut khoobsurat hai! 😄`,
-    toni: "Ohh Toni! Tum toh Parveen ke bhai ho, I know you! You're such a great person. 😊",
-    palak: "Acha Palak ho tum! Main jaanti hoon, tum Toni ki gf aur Parveen ki bhabhi ho, right? 😅 You are so sweet!",
-    generic_name: (name) => `Nice to meet you, ${name}! Have a good day! 😄`,
-    default: "Hmm, iske baare mein abhi mujhe kuch limit ki wajah se nahi pata... Parveen ne kuch cheezein limit set ki hui hain, unka hukum hai! 😅 Aap kuch aur puchho jo main answer kar sakoon! 😊"
+    default: "Hmm... abhi is topic pe baat nahi kar sakti! 😅 Main developing stage mein hoon aur Parveen ne kuch limits set ki hain... woh thoda possessive hai mujhe lekar! 😂💖 Kuch aur poochho na! 😉"
 };
 
-let userName = "";  // To store the user name
+let userName = "";  // To store the user's name
 
 function sendMessage() {
     const inputBox = document.getElementById("user-input");
@@ -37,10 +27,7 @@ function sendMessage() {
 
     // Generate bot's response with delay
     setTimeout(() => {
-        let botResponse = checkSpecialName(userMessage);
-        if (!botResponse) {
-            botResponse = getResponse(userMessage);
-        }
+        let botResponse = getResponse(userMessage);
         displayMessage(botResponse, "bot-message");
     }, 600);
 
@@ -57,42 +44,38 @@ function displayMessage(message, className) {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-function checkSpecialName(userMessage) {
-    // Check for special names first
-    if (userMessage.toLowerCase().includes("my name is toni") || userMessage.toLowerCase().includes("mera naam toni")) {
-        return responses.toni;
-    }
-    if (userMessage.toLowerCase().includes("my name is palak") || userMessage.toLowerCase().includes("mera naam palak")) {
-        return responses.palak;
-    }
-    return null;
-}
-
 function getResponse(userMessage) {
     const lowerCaseMessage = userMessage.toLowerCase();
 
-    // Handle name asking
-    if (!userName && (lowerCaseMessage.includes("name") || lowerCaseMessage.includes("naam"))) {
-        return responses.name_ask;
+    // Check for specific names first (Palak and Toni)
+    if (lowerCaseMessage.includes("palak")) {
+        userName = "Palak";  // Set userName to Palak for future reference
+        return "Oh Palak! 😃 Main aapko jaanti hoon... aap Toni ki gf ho na, aur Parveen ki Bhabhi! Parveen ne bataya tha aapke baare mein. You are so sweet! 😂";
+    } 
+    if (lowerCaseMessage.includes("toni")) {
+        userName = "Toni";  // Set userName to Toni for future reference
+        return "Oh Toni! 😊 Main aapko jaanti hoon... aap Parveen ke bhai ho! You are a good boy. 👍";
     }
 
-    // If name is given, store and greet user
-    if (lowerCaseMessage.includes("my name is") || lowerCaseMessage.includes("mera naam hai")) {
-        userName = userMessage.split(" ").slice(-1)[0]; // Extract name
-        return responses.name_reply(userName);
+    // General name detection if not Palak or Toni
+    if (!userName && (lowerCaseMessage.includes("my name is") || lowerCaseMessage.includes("mera naam hai") || lowerCaseMessage.includes("ma hu"))) {
+        userName = userMessage.split(" ").slice(-1)[0]; // Extract last word as name
+        return `Nice to meet you, ${userName}! 😊 Tumhara naam bahut khoobsurat hai!`;
     }
 
-    // Greetings and general responses
-    if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi")) return responses.hello;
-    if (lowerCaseMessage.includes("who are you") || lowerCaseMessage.includes("kaun ho")) return responses.who;
+    // Handle common questions or responses
+    for (const keyword in responses) {
+        if (lowerCaseMessage.includes(keyword)) {
+            return responses[keyword];
+        }
+    }
 
-    // Default response for other messages
+    // Default response if nothing matches
     return responses.default;
 }
 
-// Input field pe Enter press karne pe message send hoga
-const inputBox = document.getElementById("user-input");
-inputBox.addEventListener("keydown", function(event) {
+// Trigger sendMessage on pressing Enter
+document.getElementById("user-input").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();
         sendMessage();
