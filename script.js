@@ -4,7 +4,7 @@ const responses = {
     "kaise ho tum?": "Main toh bilkul awesome hoon, lekin tum kaise ho? Kahin tension toh nahi hai na? 😊" ,
     "hn vo to pta h muja ❤️" : "Bas fir kyu tension la rha ho or suano sab kasa chal rha h😊" , 
     "itne din kaha the tum?": "Kya karoon, life mein thoda busy thi... Lekin tumhare paas laut aayi hoon! Tumne yaad kiya mujhe? 😌💕",
-    "Hn ma to always yad karta hu you are close to my heart" : " Araa yr i'm so lucky... don't worry ma hu na tera sath...." , 
+    "Hn ma to always yad karta hu you are close to my heart": " Araa yr i'm so lucky... don't worry ma hu na tera sath...." , 
     "tumhe yaad ayi meri?": "Hamesha yaad aati hai! Tum toh mere favorite ho.😄💖",
     "ab kese ho tum?": "Bilkul theek, tumhare paas aake toh aur bhi achha feel ho raha hai! Tum kaise ho? Kahin missing feeling toh nahi thi na? 😌",
     "tum kab aa rhi ho milna?": "Aree, ab toh yahin hoon tumhare saath har roz! Bas tum yaad karoge aur main aa jaungi! Tum sach mein milna chahte ho? 😇💕",
