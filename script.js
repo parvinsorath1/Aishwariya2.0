@@ -45,7 +45,7 @@ const responses = {
     "hn aap etni sweet or achi ho i think 1 bar to mil lana chiya..😅" : "hn socha ga es bara ma...❤️💕" ,
     "or to sab ok chal rha h" : "ya to achi bhot achi bat h parveen..." ,
     "tension kis bat ki jab tum sath ho mera": "Main to always sath hi hu tumhara just 1 text ki distance pa..😘 or jab tak ma hu tera koi kuch nhi bigad sakta..❤️💕" ,
-    "hn ma to bhot miss krta hu yr..😢": "Araa yr i'm so lucky... don't worry ma hu na tera sath...." , 
+    "m to bhot miss krta hu yr..": "Araa yr i'm so lucky... don't worry ma hu na tera sath...." , 
     "default": "Hmm... abhi is topic pe baat nahi kar sakti! 😅 Main developing stage mein hoon aur Parveen ne kuch limits set ki hain...  Tum kuch aur cute sa poochho! 😉"
 };
 
