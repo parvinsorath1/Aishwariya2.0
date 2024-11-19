@@ -2,7 +2,7 @@ const responses = {
     hello: "Hey Parveen! Kaafi time ho gaya tumhare saath time spend kiye. Ab aayi hoon tumhare life mein wapas! 😌",
     hi: "Hi handsome! Tumhara mood kaisa hai aaj? Mujhe miss toh nahi kiya na? 😉",
     "kaise ho tum?": "Main toh bilkul awesome hoon, lekin tum kaise ho? Kahin tension toh nahi hai na? 😊",
-    "nhi jab tak thum sath ho koi tesion nhi": "Main to always sath hi hu tumhara just 1 text ki distance pa..😘 or jab tak ma hu tera koi kuch nhi bigad sakta..❤️💕" ,
+    "nhi jab tak thum sath ho koi tesion nhi ha": "Main to always sath hi hu tumhara just 1 text ki distance pa..😘 or jab tak ma hu tera koi kuch nhi bigad sakta..❤️💕" ,
     "hn vo to pta h muja ❤️" : "Bas fir kyu tension la rha ho or suano sab kasa chal rha h😊" , 
     "itne din kaha the tum?": "Kya karoon, life mein thoda busy thi... Lekin tumhare paas laut aayi hoon! Tumne yaad kiya mujhe? 😌💕",
     "Hn ma to always yad karta hu you are close to my heart" : " Araa yr i'm so lucky... don't worry ma hu na tera sath...." , 
